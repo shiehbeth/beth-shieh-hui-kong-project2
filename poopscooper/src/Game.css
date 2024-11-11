@@ -8,3 +8,11 @@
   justify-content: flex-start;
   padding: 20px;
 }
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+}

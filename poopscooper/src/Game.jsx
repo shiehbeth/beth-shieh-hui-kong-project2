@@ -214,7 +214,7 @@ function Game() {
                 return {max_width: 8, max_height: 8, num_mines: 10};
         }
     }
-    
+
     return (
 
         <GameContext.Provider value={{ gameState, setGameState, totalSafeSquares, unsafeFirstClick, setUnsafeFirstClick }}>
@@ -222,25 +222,30 @@ function Game() {
                 <div>
                     <NavBar/>
                 </div>
-                <div className="centered-content">
+                <div className='app-content'>
                     <h1>PoopScooper</h1>
 
-                    <div className="board" style={{
-                        display: "grid",
-                        gridTemplateColumns: `repeat(${max_width}, ${squareSize}px)`, 
-                        gridTemplateRows: `repeat(${max_height}, ${squareSize}px)`, 
-                        gap: "0px", 
-                        margin: "auto",
-                        marginBottom: "20px",
-                    }}>
-                        {grid}
+                    <div className="message">
+                            <h3>
+                                {displayMessage}
+                            </h3>
+                            <Button variant="secondary" onClick={resetGame}>Restart Game</Button>
+                    </div>
+                    <div className="centered-content">
+
+                        <div className="board" style={{
+                            display: "grid",
+                            gridTemplateColumns: `repeat(${max_width}, ${squareSize}px)`,
+                            gridTemplateRows: `repeat(${max_height}, ${squareSize}px)`,
+                            gap: "0px",
+                            margin: "auto",
+                            marginBottom: "20px",
+                        }}>
+                            {grid}
+                        </div>
+
                     </div>
 
-                    <h3>
-                        {displayMessage}
-                    </h3>
-
-                    <Button variant="secondary" onClick={resetGame}>Restart Game</Button>
                 </div>
             </RevealedContext.Provider>
         </GameContext.Provider>
